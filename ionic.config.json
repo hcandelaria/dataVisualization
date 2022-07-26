@@ -1,0 +1,7 @@
+{
+  "name": "health-insurancecoverage-public",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
