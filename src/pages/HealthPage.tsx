@@ -24,7 +24,7 @@ const HealthPage: React.FC = () => {
 
   return (
     <div className="container">
-      {option === "analisys" ? (
+      {option === "analysis" ? (
         <>
           <InfoCard />
           {data.length > 1 ? (
