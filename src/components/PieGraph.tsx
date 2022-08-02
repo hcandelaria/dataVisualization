@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { PieChart, Pie, Cell } from "recharts";
+import React, { useState } from 'react';
+import { Cell, Pie, PieChart } from 'recharts';
 
 const RADIAN = Math.PI / 180;
 const renderCustomizedLabel = ({
@@ -19,9 +19,9 @@ const renderCustomizedLabel = ({
     <text
       x={x}
       y={y}
-      fill="black"
-      textAnchor={x > cx ? "start" : "end"}
-      dominantBaseline="central"
+      fill='black'
+      textAnchor={x > cx ? 'start' : 'end'}
+      dominantBaseline='central'
     >
       {`${(percent * 100).toFixed(1)}%`}
     </text>
@@ -50,8 +50,8 @@ const PieGraph: React.FC<PieGraphProps> = ({ payload, colors }) => {
         labelLine={false}
         label={renderCustomizedLabel}
         outerRadius={80}
-        fill="#8884d8"
-        dataKey="value"
+        fill='#8884d8'
+        dataKey='value'
       >
         {data.map((entry, index) => (
           <Cell

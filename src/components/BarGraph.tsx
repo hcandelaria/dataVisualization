@@ -1,22 +1,22 @@
-import React, { useEffect, useState } from "react";
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-} from "recharts";
-import "./BarGraph.css";
 import {
   IonCard,
+  IonCardContent,
   IonCardHeader,
   IonCardSubtitle,
   IonCardTitle,
-  IonCardContent,
-} from "@ionic/react";
+} from '@ionic/react';
+import React, { useEffect, useState } from 'react';
+import {
+  Bar,
+  BarChart,
+  CartesianGrid,
+  Legend,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from 'recharts';
+import './BarGraph.css';
 interface BarGraphProps {
   title: string;
   subtitle?: string;
@@ -25,7 +25,7 @@ interface BarGraphProps {
 }
 interface State {
   State: string;
-  context: any
+  context: any;
 }
 
 interface GraphDetails {
@@ -42,8 +42,7 @@ const BarGraph: React.FC<BarGraphProps> = ({
   const [dataKeys] = useState<GraphDetails[]>(graphDataKey);
   const [data] = useState<State[]>(payload);
 
-  useEffect(() => {
-  });
+  useEffect(() => {});
   return (
     <IonCard>
       <IonCardHeader>
@@ -52,7 +51,7 @@ const BarGraph: React.FC<BarGraphProps> = ({
       </IonCardHeader>
 
       <IonCardContent>
-        <ResponsiveContainer width={"100%"} height={"100%"}>
+        <ResponsiveContainer width={'100%'} height={'100%'}>
           <BarChart
             data={data}
             width={500}
@@ -64,8 +63,8 @@ const BarGraph: React.FC<BarGraphProps> = ({
               bottom: 5,
             }}
           >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="State" />
+            <CartesianGrid strokeDasharray='3 3' />
+            <XAxis dataKey='State' />
             <YAxis />
             <Tooltip />
             <Legend />
@@ -74,8 +73,8 @@ const BarGraph: React.FC<BarGraphProps> = ({
                 return (
                   <Bar
                     key={index}
-                    dataKey={`${info["dataKey"]}`}
-                    fill={`${info["color"]}`}
+                    dataKey={`${info['dataKey']}`}
+                    fill={`${info['color']}`}
                   />
                 );
               })

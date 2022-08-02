@@ -7,31 +7,30 @@ import {
   IonListHeader,
   IonMenu,
   IonMenuToggle,
-} from "@ionic/react";
-
-import { useLocation } from "react-router-dom";
+} from '@ionic/react';
 import {
   analyticsOutline,
   analyticsSharp,
-  logoGithub,
-  informationCircleOutline,
-  informationCircleSharp,
-  logoPython,
-  timerOutline,
-  timerSharp,
-  bulbOutline,
-  bulbSharp,
-  readerOutline,
-  readerSharp,
   barChartOutline,
   barChartSharp,
-  mapOutline,
-  mapSharp,
   briefcaseOutline,
   briefcaseSharp,
-} from "ionicons/icons";
-import "./Menu.css";
-import { useEffect, useState } from "react";
+  bulbOutline,
+  bulbSharp,
+  informationCircleOutline,
+  informationCircleSharp,
+  logoGithub,
+  logoPython,
+  mapOutline,
+  mapSharp,
+  readerOutline,
+  readerSharp,
+  timerOutline,
+  timerSharp,
+} from 'ionicons/icons';
+import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import './Menu.css';
 
 interface AppPage {
   url: string;
@@ -51,26 +50,26 @@ interface Source {
 
 const appPages: AppPage[] = [
   {
-    title: "Health Insurance Coverage",
-    url: "/page/health/analysis",
+    title: 'Health Insurance Coverage',
+    url: '/page/health/analysis',
     iosIcon: analyticsOutline,
     mdIcon: analyticsSharp,
     sources: [
       {
-        title: "Repo",
-        url: "https://github.com/hcandelaria/health-insurance-coverage",
+        title: 'Repo',
+        url: 'https://github.com/hcandelaria/health-insurance-coverage',
         iosIcon: logoGithub,
         mdIcon: logoGithub,
       },
       {
-        title: "Jupyter Notebook",
-        url: "https://github.com/hcandelaria/health-insurance-coverage/blob/main/analysis/healthAnalysis.ipynb",
+        title: 'Jupyter Notebook',
+        url: 'https://github.com/hcandelaria/health-insurance-coverage/blob/main/analysis/healthAnalysis.ipynb',
         iosIcon: logoPython,
         mdIcon: logoPython,
       },
       {
-        title: "Kaggle",
-        url: "https://www.kaggle.com/code/eamartey/health-insurance/data",
+        title: 'Kaggle',
+        url: 'https://www.kaggle.com/code/eamartey/health-insurance/data',
         iosIcon: bulbOutline,
         mdIcon: bulbSharp,
       },
@@ -83,40 +82,40 @@ const appPages: AppPage[] = [
     ],
     options: [
       {
-        title: "Analisys",
-        url: "/page/health/analysis",
+        title: 'Analisys',
+        url: '/page/health/analysis',
         iosIcon: barChartOutline,
         mdIcon: barChartSharp,
       },
       {
-        title: "Thesis",
-        url: "/page/health/thesis",
+        title: 'Thesis',
+        url: '/page/health/thesis',
         iosIcon: readerOutline,
         mdIcon: readerSharp,
       },
       {
-        title: "Map",
-        url: "/page/health/map",
+        title: 'Map',
+        url: '/page/health/map',
         iosIcon: mapOutline,
         mdIcon: mapSharp,
       },
     ],
   },
   {
-    title: "Demo",
-    url: "/page/demo",
+    title: 'Demo',
+    url: '/page/demo',
     iosIcon: analyticsOutline,
     mdIcon: analyticsSharp,
     sources: [
       {
-        title: "Demo1",
-        url: "https://github.com/hcandelaria/health-insurance-coverage",
+        title: 'Demo1',
+        url: 'https://github.com/hcandelaria/health-insurance-coverage',
         iosIcon: logoGithub,
         mdIcon: logoGithub,
       },
       {
-        title: "Demo2",
-        url: "https://www.kaggle.com/code/eamartey/health-insurance/data",
+        title: 'Demo2',
+        url: 'https://www.kaggle.com/code/eamartey/health-insurance/data',
         iosIcon: informationCircleOutline,
         mdIcon: informationCircleSharp,
       },
@@ -126,45 +125,45 @@ const appPages: AppPage[] = [
 
 const Menu: React.FC = () => {
   const location = useLocation();
-  const [dataProject, setDataProject] = useState("");
+  const [dataProject, setDataProject] = useState('');
 
   return (
-    <IonMenu contentId="main" id="menu-test" type="overlay">
+    <IonMenu contentId='main' id='menu-test' type='overlay'>
       <IonContent>
-        <IonList id="inbox-list">
+        <IonList id='inbox-list'>
           <IonListHeader>Analysis</IonListHeader>
           {appPages.map((appPage, index) => {
-            if (location.pathname === appPage.url && dataProject === "") {
+            if (location.pathname === appPage.url && dataProject === '') {
               setDataProject(appPage.title);
             }
             return (
               <IonMenuToggle key={index} autoHide={false}>
                 <IonItem
                   className={
-                    location.pathname.split("/")[2] ===
-                    appPage.url.split("/")[2]
-                      ? "selected"
-                      : ""
+                    location.pathname.split('/')[2] ===
+                    appPage.url.split('/')[2]
+                      ? 'selected'
+                      : ''
                   }
                   routerLink={appPage.url}
-                  routerDirection="none"
-                  lines="none"
+                  routerDirection='none'
+                  lines='none'
                   detail={false}
                 >
                   <IonIcon
-                    slot="start"
+                    slot='start'
                     ios={appPage.iosIcon}
                     md={appPage.mdIcon}
                   />
                   <IonLabel>{appPage.title}</IonLabel>
                 </IonItem>
                 <IonList
-                  id="project-nav"
+                  id='project-nav'
                   className={
-                    location.pathname.split("/")[2] ===
-                    appPage.url.split("/")[2]
-                      ? ""
-                      : "hidden"
+                    location.pathname.split('/')[2] ===
+                    appPage.url.split('/')[2]
+                      ? ''
+                      : 'hidden'
                   }
                 >
                   {appPage.options?.map((option, index) => {
@@ -172,17 +171,17 @@ const Menu: React.FC = () => {
                       <IonItem
                         className={
                           location.pathname === option.url
-                            ? "selected-sub-menu"
-                            : ""
+                            ? 'selected-sub-menu'
+                            : ''
                         }
                         key={index}
                         routerLink={option.url}
-                        routerDirection="none"
-                        lines="none"
+                        routerDirection='none'
+                        lines='none'
                         detail={false}
                       >
                         <IonIcon
-                          slot="start"
+                          slot='start'
                           ios={option.iosIcon}
                           md={option.mdIcon}
                         />
@@ -195,28 +194,32 @@ const Menu: React.FC = () => {
             );
           })}
           <IonItem>
-            <IonIcon slot="start" ios={timerOutline} md={timerSharp} />
+            <IonIcon slot='start' ios={timerOutline} md={timerSharp} />
             <IonLabel>More Coming Soon</IonLabel>
           </IonItem>
         </IonList>
-        <IonList id="labels-list">
+        <IonList id='labels-list'>
           <IonListHeader>{dataProject} Sources</IonListHeader>
           {appPages.map((page, index) => {
             return (
               <div
                 key={index}
-                className={location.pathname.split("/")[2] === page.url.split("/")[2] ? "" : "hidden"}
+                className={
+                  location.pathname.split('/')[2] === page.url.split('/')[2]
+                    ? ''
+                    : 'hidden'
+                }
               >
                 {page.sources.map((source, index) => {
                   return (
                     <IonItem
                       href={source.url}
-                      target={"_black"}
-                      lines="none"
+                      target={'_black'}
+                      lines='none'
                       key={index}
                     >
                       <IonIcon
-                        slot="start"
+                        slot='start'
                         ios={source.iosIcon}
                         md={source.mdIcon}
                       />
@@ -228,15 +231,15 @@ const Menu: React.FC = () => {
             );
           })}
         </IonList>
-        <IonList id="footer-list">
+        <IonList id='footer-list'>
           <IonItem
-            routerDirection="none"
-            lines="none"
+            routerDirection='none'
+            lines='none'
             detail={false}
-            target={"_black"}
-            href={"https://hcandelaria.com"}
+            target={'_black'}
+            href={'https://hcandelaria.com'}
           >
-            <IonIcon slot="start" ios={briefcaseOutline} md={briefcaseSharp} />
+            <IonIcon slot='start' ios={briefcaseOutline} md={briefcaseSharp} />
             <IonLabel>My Portfolio</IonLabel>
           </IonItem>
         </IonList>
