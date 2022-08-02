@@ -4,7 +4,7 @@
 Data analysis for health insuranced coverage in the United States.
 
 
-## 🚀 About Me
+## 🚀 About Project
 
 COMING SOON
 
