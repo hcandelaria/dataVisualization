@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import BarGraph from '../components/BarGraph';
-import InfoCard from '../components/InfoCard';
+import HealthInfoCard from '../components/HealthInfoCard';
 import { getHealthInsuranceData } from '../libs/api';
-import './HealthPage.css';
+import './HealthAnalysisPage.css';
 
 const HealthPage: React.FC = () => {
   const [data, setData] = useState([]);
@@ -20,7 +20,7 @@ const HealthPage: React.FC = () => {
 
   return (
     <div className='container'>
-      <InfoCard />
+      <HealthInfoCard />
       {data.length > 1 ? (
         <>
           <BarGraph
@@ -51,7 +51,6 @@ const HealthPage: React.FC = () => {
       ) : (
         <></>
       )}
-      ) : (<></>
     </div>
   );
 };

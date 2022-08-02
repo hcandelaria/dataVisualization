@@ -10,7 +10,7 @@ import {
 import React from 'react';
 import PieGraph from './PieGraph';
 
-const InfoCard: React.FC = () => (
+const HealthInfoCard: React.FC = () => (
   <IonGrid>
     <IonRow>
       <IonCol size='12'>
@@ -84,4 +84,4 @@ const InfoCard: React.FC = () => (
   </IonGrid>
 );
 
-export default InfoCard;
+export default HealthInfoCard;

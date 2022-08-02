@@ -8,7 +8,9 @@ import {
   IonToolbar,
 } from '@ionic/react';
 import { Route, Routes, useLocation } from 'react-router-dom';
-import HealthPage from './HealthPage';
+import HealthAnalysisPage from './HealthAnalysisPage';
+import HealthMapPage from './HealthMapPage';
+import HealthThesisPage from './HealthThesisPage';
 
 const Page: React.FC = () => {
   const location = useLocation();
@@ -32,9 +34,9 @@ const Page: React.FC = () => {
         </IonHeader>
         {/* Health Routes */}
         <Routes>
-          <Route path='/health/analysis' element={<HealthPage />} />
-          <Route path='/health/thesis' element={<div>coming soon</div>} />
-          <Route path='/health/map' element={<div>coming soon</div>} />
+          <Route path='/health/analysis' element={<HealthAnalysisPage />} />
+          <Route path='/health/thesis' element={<HealthThesisPage />} />
+          <Route path='/health/map' element={<HealthMapPage />} />
         </Routes>
         {/* Demo Routes */}
         <Routes>
