@@ -150,3 +150,7 @@ ion-item.selected-sub-menu {
   border-top: 1px solid var(--ion-color-step-150, #d7d8da);
   border-bottom: 1px solid var(--ion-color-step-150, #d7d8da);
 }
+
+a:link {
+  text-decoration: none;
+}

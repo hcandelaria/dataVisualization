@@ -29,7 +29,7 @@ import {
   timerSharp,
 } from 'ionicons/icons';
 import { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './Menu.css';
 
 interface AppPage {
@@ -120,6 +120,26 @@ const appPages: AppPage[] = [
         mdIcon: informationCircleSharp,
       },
     ],
+    options: [
+      {
+        title: 'Analisys',
+        url: '/page/demo/analysis',
+        iosIcon: barChartOutline,
+        mdIcon: barChartSharp,
+      },
+      {
+        title: 'Thesis',
+        url: '/page/demo/thesis',
+        iosIcon: readerOutline,
+        mdIcon: readerSharp,
+      },
+      {
+        title: 'Map',
+        url: '/page/demo/map',
+        iosIcon: mapOutline,
+        mdIcon: mapSharp,
+      },
+    ],
   },
 ];
 
@@ -138,25 +158,26 @@ const Menu: React.FC = () => {
             }
             return (
               <IonMenuToggle key={index} autoHide={false}>
-                <IonItem
-                  className={
-                    location.pathname.split('/')[2] ===
-                    appPage.url.split('/')[2]
-                      ? 'selected'
-                      : ''
-                  }
-                  routerLink={appPage.url}
-                  routerDirection='none'
-                  lines='none'
-                  detail={false}
-                >
-                  <IonIcon
-                    slot='start'
-                    ios={appPage.iosIcon}
-                    md={appPage.mdIcon}
-                  />
-                  <IonLabel>{appPage.title}</IonLabel>
-                </IonItem>
+                <Link to={appPage.url}>
+                  <IonItem
+                    className={
+                      location.pathname.split('/')[2] ===
+                      appPage.url.split('/')[2]
+                        ? 'selected'
+                        : ''
+                    }
+                    routerDirection='none'
+                    lines='none'
+                    detail={false}
+                  >
+                    <IonIcon
+                      slot='start'
+                      ios={appPage.iosIcon}
+                      md={appPage.mdIcon}
+                    />
+                    <IonLabel>{appPage.title}</IonLabel>
+                  </IonItem>
+                </Link>
                 <IonList
                   id='project-nav'
                   className={
@@ -168,25 +189,25 @@ const Menu: React.FC = () => {
                 >
                   {appPage.options?.map((option, index) => {
                     return (
-                      <IonItem
-                        className={
-                          location.pathname === option.url
-                            ? 'selected-sub-menu'
-                            : ''
-                        }
-                        key={index}
-                        routerLink={option.url}
-                        routerDirection='none'
-                        lines='none'
-                        detail={false}
-                      >
-                        <IonIcon
-                          slot='start'
-                          ios={option.iosIcon}
-                          md={option.mdIcon}
-                        />
-                        <IonLabel>{option.title}</IonLabel>
-                      </IonItem>
+                      <Link to={option.url} key={index}>
+                        <IonItem
+                          className={
+                            location.pathname === option.url
+                              ? 'selected-sub-menu'
+                              : ''
+                          }
+                          routerDirection='none'
+                          lines='none'
+                          detail={false}
+                        >
+                          <IonIcon
+                            slot='start'
+                            ios={option.iosIcon}
+                            md={option.mdIcon}
+                          />
+                          <IonLabel>{option.title}</IonLabel>
+                        </IonItem>
+                      </Link>
                     );
                   })}
                 </IonList>
