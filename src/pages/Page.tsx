@@ -38,12 +38,6 @@ const Page: React.FC = () => {
           <Route path='/health/thesis' element={<HealthThesisPage />} />
           <Route path='/health/map' element={<HealthMapPage />} />
         </Routes>
-        {/* Demo Routes */}
-        <Routes>
-          <Route path='/demo/analysis' element={<div>demo coming soon</div>} />
-          <Route path='/demo/thesis' element={<div>demo coming soon</div>} />
-          <Route path='/demo/map' element={<div>demo coming soon</div>} />
-        </Routes>
       </IonContent>
     </IonPage>
   );

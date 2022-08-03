@@ -73,12 +73,6 @@ const appPages: AppPage[] = [
         iosIcon: bulbOutline,
         mdIcon: bulbSharp,
       },
-      // {
-      //   title: "Project Stack",
-      //   url: "https://hcandelaria.com",
-      //   iosIcon: informationCircleOutline,
-      //   mdIcon: informationCircleSharp,
-      // },
     ],
     options: [
       {
@@ -101,46 +95,46 @@ const appPages: AppPage[] = [
       },
     ],
   },
-  {
-    title: 'Demo',
-    url: '/page/demo',
-    iosIcon: analyticsOutline,
-    mdIcon: analyticsSharp,
-    sources: [
-      {
-        title: 'Demo1',
-        url: 'https://github.com/hcandelaria/health-insurance-coverage',
-        iosIcon: logoGithub,
-        mdIcon: logoGithub,
-      },
-      {
-        title: 'Demo2',
-        url: 'https://www.kaggle.com/code/eamartey/health-insurance/data',
-        iosIcon: informationCircleOutline,
-        mdIcon: informationCircleSharp,
-      },
-    ],
-    options: [
-      {
-        title: 'Analisys',
-        url: '/page/demo/analysis',
-        iosIcon: barChartOutline,
-        mdIcon: barChartSharp,
-      },
-      {
-        title: 'Thesis',
-        url: '/page/demo/thesis',
-        iosIcon: readerOutline,
-        mdIcon: readerSharp,
-      },
-      {
-        title: 'Map',
-        url: '/page/demo/map',
-        iosIcon: mapOutline,
-        mdIcon: mapSharp,
-      },
-    ],
-  },
+  // {
+  //   title: 'Demo',
+  //   url: '/page/demo',
+  //   iosIcon: analyticsOutline,
+  //   mdIcon: analyticsSharp,
+  //   sources: [
+  //     {
+  //       title: 'Demo1',
+  //       url: 'https://github.com/hcandelaria/health-insurance-coverage',
+  //       iosIcon: logoGithub,
+  //       mdIcon: logoGithub,
+  //     },
+  //     {
+  //       title: 'Demo2',
+  //       url: 'https://www.kaggle.com/code/eamartey/health-insurance/data',
+  //       iosIcon: informationCircleOutline,
+  //       mdIcon: informationCircleSharp,
+  //     },
+  //   ],
+  //   options: [
+  //     {
+  //       title: 'Analisys',
+  //       url: '/page/demo/analysis',
+  //       iosIcon: barChartOutline,
+  //       mdIcon: barChartSharp,
+  //     },
+  //     {
+  //       title: 'Thesis',
+  //       url: '/page/demo/thesis',
+  //       iosIcon: readerOutline,
+  //       mdIcon: readerSharp,
+  //     },
+  //     {
+  //       title: 'Map',
+  //       url: '/page/demo/map',
+  //       iosIcon: mapOutline,
+  //       mdIcon: mapSharp,
+  //     },
+  //   ],
+  // },
 ];
 
 const Menu: React.FC = () => {

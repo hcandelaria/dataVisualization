@@ -94,13 +94,7 @@ const HealthMapPage: React.FC = () => {
           borderColor='#152538'
           tooltip={(e) => {
             const payload = { label: e.feature.label, value: e.feature.value };
-            return (
-              <CardToolTip payload={payload} />
-              // <div className='tooltip'>
-              //   <p>{e.feature.label}</p>
-              //   {e.feature.value}% Uninsured
-              // </div>
-            );
+            return <CardToolTip payload={payload} />;
           }}
           legends={[
             {
