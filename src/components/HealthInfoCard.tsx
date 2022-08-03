@@ -3,6 +3,7 @@ import {
   IonCardContent,
   IonCardHeader,
   IonCardSubtitle,
+  IonCardTitle,
   IonCol,
   IonGrid,
   IonRow,
@@ -16,6 +17,7 @@ const HealthInfoCard: React.FC = () => (
       <IonCol size='12'>
         <IonCard>
           <IonCardHeader>
+            <IonCardTitle>Health Insurance Coverage</IonCardTitle>
             <IonCardSubtitle>USA 2015 Uninsured Data</IonCardSubtitle>
           </IonCardHeader>
           <IonCardContent>
@@ -39,6 +41,28 @@ const HealthInfoCard: React.FC = () => (
                 Lowest
                 <h1>Massachusetts</h1>
                 <h1>2.8%</h1>
+              </IonCol>
+            </IonRow>
+          </IonCardContent>
+
+          <IonCardSubtitle>USA 2010 Uninsured Data</IonCardSubtitle>
+
+          <IonCardContent>
+            <IonRow>
+              <IonCol size='4'>
+                Mean
+                <h1>USA</h1>
+                <h1>14.8%</h1>
+              </IonCol>
+              <IonCol size='4'>
+                Highest
+                <h1>Texas</h1>
+                <h1>23.7%</h1>
+              </IonCol>
+              <IonCol size='4'>
+                Lowest
+                <h1>Massachusetts</h1>
+                <h1>4.4%</h1>
               </IonCol>
             </IonRow>
           </IonCardContent>
