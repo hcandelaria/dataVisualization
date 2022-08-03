@@ -17,8 +17,6 @@ import {
   briefcaseSharp,
   bulbOutline,
   bulbSharp,
-  informationCircleOutline,
-  informationCircleSharp,
   logoGithub,
   logoPython,
   mapOutline,
