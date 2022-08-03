@@ -1,0 +1,11 @@
+#health-map-container {
+  height: 90%;
+  margin-top: 10px;
+  color: #000000;
+}
+.tooltip {
+  background-color: #ffffff;
+  height: 50px;
+  width: 150px;
+  text-align: center;
+}
