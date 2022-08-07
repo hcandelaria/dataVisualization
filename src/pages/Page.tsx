@@ -7,14 +7,12 @@ import {
   IonTitle,
   IonToolbar,
 } from '@ionic/react';
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import HealthAnalysisPage from './HealthAnalysisPage';
 import HealthMapPage from './HealthMapPage';
 import HealthThesisPage from './HealthThesisPage';
 
 const Page: React.FC = () => {
-  const location = useLocation();
-
   return (
     <IonPage>
       <IonHeader>
@@ -22,15 +20,12 @@ const Page: React.FC = () => {
           <IonButtons slot='start'>
             <IonMenuButton />
           </IonButtons>
-          <IonTitle>{location.pathname.split('/')[3]}</IonTitle>
         </IonToolbar>
       </IonHeader>
 
       <IonContent fullscreen>
         <IonHeader collapse='condense'>
-          <IonToolbar>
-            <IonTitle size='large'>{location.pathname.split('/')[3]}</IonTitle>
-          </IonToolbar>
+          <IonToolbar></IonToolbar>
         </IonHeader>
         {/* Health Routes */}
         <Routes>
