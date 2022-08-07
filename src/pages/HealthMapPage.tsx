@@ -62,16 +62,22 @@ const data = [
 
 const HealthMapPage: React.FC = () => {
   const [features, setFeatures] = useState([]);
-
+  const [scale, setScale] = useState(1000);
   const getFeatures = async () => {
     if (features.length < 1) {
       const res = await getHealthInsuranceMapFeatures();
       setFeatures(res?.data.features);
     }
   };
+  const updateScale = () => {
+    setScale(window.innerWidth);
+  };
 
   useEffect(() => {
     getFeatures();
+    if (window.innerWidth < 801) {
+      updateScale();
+    }
   });
   return (
     <div id='health-map-container'>
@@ -85,7 +91,7 @@ const HealthMapPage: React.FC = () => {
           unknownColor='#666666'
           label={'properties.name'}
           valueFormat='.2s'
-          projectionScale={1000}
+          projectionScale={scale}
           projectionTranslation={[0.5, 0.5]}
           projectionRotation={[100, -40, 0]}
           enableGraticule={false}
