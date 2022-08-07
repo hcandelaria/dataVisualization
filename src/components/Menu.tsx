@@ -66,8 +66,8 @@ const appPages: AppPage[] = [
         mdIcon: logoPython,
       },
       {
-        title: 'Kaggle',
-        url: 'https://www.kaggle.com/code/eamartey/health-insurance/data',
+        title: 'Health Care Website',
+        url: 'https://www.healthcare.gov/glossary/affordable-care-act/',
         iosIcon: bulbOutline,
         mdIcon: bulbSharp,
       },
