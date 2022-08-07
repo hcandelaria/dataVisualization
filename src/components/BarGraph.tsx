@@ -40,9 +40,25 @@ const BarGraph: React.FC<BarGraphProps> = ({
   subtitle,
 }) => {
   const [dataKeys] = useState<GraphDetails[]>(graphDataKey);
-  const [data] = useState<State[]>(payload);
+  const [data, setData] = useState<State[]>(payload);
+  const [sorted, setSorted] = useState(false);
 
-  useEffect(() => {});
+  const sortData = () => {
+    const key = dataKeys[0].dataKey as keyof State;
+
+    setData((data) => [
+      ...data.slice().sort((a, b) => {
+        return a[key] - b[key];
+      }),
+    ]);
+    setSorted(true);
+  };
+
+  useEffect(() => {
+    if (!sorted) {
+      sortData();
+    }
+  });
   return (
     <IonCard>
       <IonCardHeader>
