@@ -54,14 +54,14 @@ const appPages: AppPage[] = [
     mdIcon: analyticsSharp,
     sources: [
       {
-        title: 'Repo',
+        title: 'Repository',
         url: 'https://github.com/hcandelaria/health-insurance-coverage',
         iosIcon: logoGithub,
         mdIcon: logoGithub,
       },
       {
         title: 'Jupyter Notebook',
-        url: 'https://github.com/hcandelaria/health-insurance-coverage/blob/main/analysis/healthAnalysis.ipynb',
+        url: 'https://github.com/hcandelaria/healthCoverageAnalysis',
         iosIcon: logoPython,
         mdIcon: logoPython,
       },
