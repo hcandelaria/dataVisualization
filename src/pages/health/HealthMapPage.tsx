@@ -1,8 +1,8 @@
 import { IonProgressBar } from '@ionic/react';
 import { ResponsiveChoropleth } from '@nivo/geo';
 import React, { useEffect, useState } from 'react';
-import CardToolTip from '../components/CardToolTip';
-import { getHealthInsuranceMapFeatures } from '../libs/api';
+import CardToolTip from '../../components/CardToolTip';
+import { getHealthInsuranceMapFeatures } from '../../libs/api';
 import './HealthMapPage.css';
 
 const data = [

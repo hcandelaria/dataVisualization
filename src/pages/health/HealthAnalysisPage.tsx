@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import BarGraph from '../components/BarGraph';
-import HealthInfoCard from '../components/HealthInfoCard';
-import { getHealthInsuranceData } from '../libs/api';
+import BarGraph from '../../components/BarGraph';
+import HealthInfoCard from '../../components/HealthInfoCard';
+import { getHealthInsuranceData } from '../../libs/api';
 import './HealthAnalysisPage.css';
 
 const HealthPage: React.FC = () => {
