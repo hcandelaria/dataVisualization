@@ -16,21 +16,14 @@ import {
   XAxis,
   YAxis,
 } from 'recharts';
+import { GraphDetails } from '../interfaces/GraphDetails';
+import { State } from '../interfaces/State';
 import './BarGraph.css';
 interface BarGraphProps {
   title: string;
   subtitle?: string;
   graphDataKey: GraphDetails[];
   payload: State[];
-}
-interface State {
-  State: string;
-  context: any;
-}
-
-interface GraphDetails {
-  color: string;
-  dataKey: string;
 }
 
 const BarGraph: React.FC<BarGraphProps> = ({
